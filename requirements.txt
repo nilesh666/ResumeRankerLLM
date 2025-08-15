@@ -9,3 +9,5 @@ sentence-transformers
 langchain_huggingface
 pdfplumber
 python-docx
+python-dotenv
+qdrant-client
