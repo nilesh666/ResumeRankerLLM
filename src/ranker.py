@@ -47,10 +47,10 @@ class ResumeRanker:
              "resume_list": resumes_text
              })
 
-if __name__ == "__main__":
-    ranker = ResumeRanker()
+# if __name__ == "__main__":
+#     ranker = ResumeRanker()
 
-    job_desc = "Looking for a Python developer with experience in data science, machine learning, and cloud deployment."
-    results = ranker.rank_resumes(job_desc)
+#     job_desc = "Looking for a Python developer with experience in data science, machine learning, and cloud deployment."
+#     results = ranker.rank_resumes(job_desc)
 
-    print(results.content)
+#     print(results.content)
