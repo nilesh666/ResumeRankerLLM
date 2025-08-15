@@ -11,3 +11,4 @@ pdfplumber
 python-docx
 python-dotenv
 qdrant-client
+langchain-qdrant

@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from utils.logger import logging
 from utils.custom_exception import CustomException
 import sys
+import uuid
 
 load_dotenv()
 
@@ -29,7 +30,7 @@ class VectorStore:
                 
 
     def load_and_store(self):
-        doc = [Document(page_content = text, metadata={"source": "direct_input"}) for text in self.resume_texts]
+        doc = [Document(page_content = text, metadata={"source": "direct_input", "candidate_id": str(uuid.uuid4())}) for text in self.resume_texts]
         
         splitter = CharacterTextSplitter(
             chunk_size =1000,
@@ -61,18 +62,67 @@ class VectorStore:
             raise CustomException(e, sys)
 
 
-# if __name__=="__main__":
-#     sample_texts = [
-#                 "The quick brown fox jumps over the lazy dog.",
-#                 "Artificial Intelligence is transforming the way businesses operate.",
-#                 "A steaming cup of coffee is the perfect start to a rainy morning.",
-#                 "Mount Everest is the highest mountain in the world, located in the Himalayas.",
-#                 "Python is a versatile programming language used in data science, AI, and web development.",
-#                 "My name is Nilesh Nandan"
-#             ]
+if __name__=="__main__":
+    sample_texts = [
+                        
+                """John Doe
+                Email: john.doe@example.com
+                Phone: +91 9876543210
+
+                Summary:
+                Data Scientist with 5 years of experience in machine learning, NLP, and big data analytics.
+
+                Skills:
+                - Python, R, SQL
+                - TensorFlow, PyTorch
+                - AWS, GCP
+                - Data Visualization (Tableau, Power BI)
+
+                Experience:
+                Senior Data Scientist | XYZ Corp | 2020 - Present
+                - Built predictive models to improve customer retention by 15%
+                - Designed ETL pipelines for large-scale data processing""",
+
+                """Priya Sharma
+                Email: priya.sharma@example.com
+                Phone: +91 9123456780
+
+                Summary:
+                Full Stack Developer with expertise in building scalable web applications and cloud-native solutions.
+
+                Skills:
+                - JavaScript, TypeScript, Python
+                - React, Node.js, Django
+                - AWS, Docker, Kubernetes
+                - PostgreSQL, MongoDB
+
+                Experience:
+                Software Engineer | ABC Technologies | 2019 - Present
+                - Developed an e-commerce platform serving 1M+ monthly users
+                - Optimized backend APIs, reducing response time by 40%""",
+
+                """Rajesh Kumar
+                Email: rajesh.kumar@example.com
+                Phone: +91 9988776655
+
+                Summary:
+                Data Engineer specializing in building data pipelines and real-time analytics systems.
+
+                Skills:
+                - Python, Scala, Java
+                - Apache Spark, Kafka
+                - Airflow, dbt
+                - Azure, AWS
+
+                Experience:
+                Data Engineer | DataFlow Inc | 2021 - Present
+                - Designed real-time streaming pipelines for IoT data
+                - Reduced ETL job runtime from 2 hours to 20 minutes"""
+
+            ]
     
-#     a = VectorStore(sample_texts)
-#     a.run()
+    a = VectorStore(sample_texts)
+    a.run()
         
 
 
