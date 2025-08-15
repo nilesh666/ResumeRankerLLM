@@ -1,4 +1,3 @@
-from langchain.chains import LLMChain
 from langchain_groq import ChatGroq
 from src.prompt_template import get_ranker_prompt
 from dotenv import load_dotenv
@@ -14,7 +13,7 @@ api_key = os.getenv("GROQ_API")
 
 
 class ResumeRanker:
-    def __init__(self, qdrant_url="http://localhost:6333", collection_name="ResumeCollections"):
+    def __init__(self, collection_name="ResumeCollections"):
         self.embedding = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
         self.llm = ChatGroq(api_key = api_key, model_name="llama-3.1-8b-instant", temperature=0) 
         self.prompt = get_ranker_prompt()

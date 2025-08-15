@@ -1,6 +1,7 @@
 import streamlit as st
 import pdfplumber
 import docx
+from pipeline.pipeline import RAGchain
 
 # ---------- File Reading Utility ----------
 def read_file(uploaded_file):
@@ -46,6 +47,7 @@ resume_files = st.file_uploader(
     accept_multiple_files=True
 )
 
+resumes=[]
 # Process button
 if st.button("Process Files"):
     if not job_description_file:
@@ -63,5 +65,13 @@ if st.button("Process Files"):
         # Read resumes
         for resume_file in resume_files:
             resume_text = read_file(resume_file)
-            st.subheader(f"Resume: {resume_file.name}")
-            st.text_area("Resume Text", resume_text, height=200)
+            resumes.append(resume_text)
+            # st.subheader(f"Resume: {resume_file.name}")
+            # st.text_area("Resume Text", resume_text, height=200)
+
+    c=RAGchain(jd_text, resumes)
+    res = c.pipeline()
+    
+    st.write(res)
+
+        

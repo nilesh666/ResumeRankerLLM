@@ -62,67 +62,67 @@ class VectorStore:
             raise CustomException(e, sys)
 
 
-if __name__=="__main__":
-    sample_texts = [
+# if __name__=="__main__":
+#     sample_texts = [
                         
-                """John Doe
-                Email: john.doe@example.com
-                Phone: +91 9876543210
+#                 """John Doe
+#                 Email: john.doe@example.com
+#                 Phone: +91 9876543210
 
-                Summary:
-                Data Scientist with 5 years of experience in machine learning, NLP, and big data analytics.
+#                 Summary:
+#                 Data Scientist with 5 years of experience in machine learning, NLP, and big data analytics.
 
-                Skills:
-                - Python, R, SQL
-                - TensorFlow, PyTorch
-                - AWS, GCP
-                - Data Visualization (Tableau, Power BI)
+#                 Skills:
+#                 - Python, R, SQL
+#                 - TensorFlow, PyTorch
+#                 - AWS, GCP
+#                 - Data Visualization (Tableau, Power BI)
 
-                Experience:
-                Senior Data Scientist | XYZ Corp | 2020 - Present
-                - Built predictive models to improve customer retention by 15%
-                - Designed ETL pipelines for large-scale data processing""",
+#                 Experience:
+#                 Senior Data Scientist | XYZ Corp | 2020 - Present
+#                 - Built predictive models to improve customer retention by 15%
+#                 - Designed ETL pipelines for large-scale data processing""",
 
-                """Priya Sharma
-                Email: priya.sharma@example.com
-                Phone: +91 9123456780
+#                 """Priya Sharma
+#                 Email: priya.sharma@example.com
+#                 Phone: +91 9123456780
 
-                Summary:
-                Full Stack Developer with expertise in building scalable web applications and cloud-native solutions.
+#                 Summary:
+#                 Full Stack Developer with expertise in building scalable web applications and cloud-native solutions.
 
-                Skills:
-                - JavaScript, TypeScript, Python
-                - React, Node.js, Django
-                - AWS, Docker, Kubernetes
-                - PostgreSQL, MongoDB
+#                 Skills:
+#                 - JavaScript, TypeScript, Python
+#                 - React, Node.js, Django
+#                 - AWS, Docker, Kubernetes
+#                 - PostgreSQL, MongoDB
 
-                Experience:
-                Software Engineer | ABC Technologies | 2019 - Present
-                - Developed an e-commerce platform serving 1M+ monthly users
-                - Optimized backend APIs, reducing response time by 40%""",
+#                 Experience:
+#                 Software Engineer | ABC Technologies | 2019 - Present
+#                 - Developed an e-commerce platform serving 1M+ monthly users
+#                 - Optimized backend APIs, reducing response time by 40%""",
 
-                """Rajesh Kumar
-                Email: rajesh.kumar@example.com
-                Phone: +91 9988776655
+#                 """Rajesh Kumar
+#                 Email: rajesh.kumar@example.com
+#                 Phone: +91 9988776655
 
-                Summary:
-                Data Engineer specializing in building data pipelines and real-time analytics systems.
+#                 Summary:
+#                 Data Engineer specializing in building data pipelines and real-time analytics systems.
 
-                Skills:
-                - Python, Scala, Java
-                - Apache Spark, Kafka
-                - Airflow, dbt
-                - Azure, AWS
+#                 Skills:
+#                 - Python, Scala, Java
+#                 - Apache Spark, Kafka
+#                 - Airflow, dbt
+#                 - Azure, AWS
 
-                Experience:
-                Data Engineer | DataFlow Inc | 2021 - Present
-                - Designed real-time streaming pipelines for IoT data
-                - Reduced ETL job runtime from 2 hours to 20 minutes"""
+#                 Experience:
+#                 Data Engineer | DataFlow Inc | 2021 - Present
+#                 - Designed real-time streaming pipelines for IoT data
+#                 - Reduced ETL job runtime from 2 hours to 20 minutes"""
 
-            ]
+#             ]
     
-    a = VectorStore(sample_texts)
-    a.run()
+#     a = VectorStore(sample_texts)
+#     a.run()
         
 
 
