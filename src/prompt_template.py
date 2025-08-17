@@ -6,7 +6,9 @@ def get_ranker_prompt():
 
         Your task: 
         Given a job description and multiple candidate resumes, analyze how well each resume matches the job requirements.
-        Evaluate based on skills, experience, education, and relevance to the role.
+        Evaluate based on skills, experience, education, and relevance to the role based on the given job description.
+        Stick strcitly to the given job description and don't give generalized score for the given resumes.
+        Only rank the resumes based on the job description. 
 
         Instructions:
         1. Score each resume on a scale from 0 to 10 (10 = perfect match).
