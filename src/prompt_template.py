@@ -25,6 +25,7 @@ def get_ranker_prompt():
         [
         {{
             "candidate_id": "<unique_resume_identifier>",
+            "candidate_name: <name of the candidate>"
             "score": <numeric_score>,
             "justification": "<short reason for the score>"
         }},

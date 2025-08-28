@@ -15,7 +15,7 @@ api_key = os.getenv("GROQ_API")
 class ResumeRanker:
     def __init__(self, collection_name="ResumeCollections"):
         self.embedding = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-        self.llm = ChatGroq(api_key = api_key, model_name="llama-3.1-8b-instant", temperature=0) 
+        self.llm = ChatGroq(api_key = api_key, model_name="openai/gpt-oss-120b", temperature=0) 
         self.prompt = get_ranker_prompt()
         self.vector_db = QdrantVectorStore(
             client = QdrantClient(url="http://localhost:6333"),
